@@ -107,7 +107,7 @@ namespace Sums_of_Anarchy
                 Console.WriteLine("3. Withdrawal");
                 Console.WriteLine("4. Deposit");
                 Console.WriteLine("5. Open a new account");
-                Console.WriteLine("6. Currency Exchanger");
+                Console.WriteLine("6. Currency Converter");
                 Console.WriteLine("7. Log out.");
 
                 string choice = Console.ReadLine();
@@ -146,9 +146,9 @@ namespace Sums_of_Anarchy
             List<KeyValuePair<string, decimal>> currencyList = GetCurrencyListFromWeb(out DateTime currencyDate);
 
             // Sort top 10 currencies Descending
-            var popularCurrencies = currencyList.OrderByDescending(x => x.Value).Take(10);
+            var popularCurrency = currencyList.OrderByDescending(x => x.Value).Take(10);
 
-            foreach (var currency in popularCurrencies)
+            foreach (var currency in popularCurrency)
             {
                 Console.WriteLine($"{currency.Key}: {currency.Value}");
             }
